@@ -2,7 +2,7 @@ FROM alpine:3.8
 MAINTAINER winter0mute <winter0mute@noreply.net>
 
 RUN apk add --no-cache ca-certificates ffmpeg openssl python3 \
-    && pip3 install 'youtube-dl==2018.11.23'
+    && pip3 install 'youtube-dl==2018.12.03'
 
 COPY run.sh /run.sh
 
