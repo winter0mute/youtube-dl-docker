@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 MAINTAINER winter0mute <winter0mute@noreply.net>
 
 RUN apk add --no-cache ca-certificates ffmpeg openssl python3 \
