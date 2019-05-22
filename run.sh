@@ -16,6 +16,13 @@ fi
 
 # Run the youtube-dl whit the recieved aruments
 youtube-dl "$@"
+RC=$?
+
+if [ "${RC}" != 0 ]
+then
+  echo ""
+  echo "Attention, youtube-dl with error code ${RC}!"
+fi
 
 # Calculate run duration
 FINISH_TIME=$(date +%s)
