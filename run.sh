@@ -14,6 +14,9 @@ then
       fi
 fi
 
+# Echo version
+echo "Version of youtube-dl: $(youtube-dl --version)"
+
 # Run the youtube-dl whit the recieved aruments
 youtube-dl "$@"
 RC=$?
