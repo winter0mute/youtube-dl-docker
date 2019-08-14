@@ -4,7 +4,7 @@ START_TIME=$(date +%s)
 # Check if youtube-dl is available
 type youtube-dl >/dev/null 2>&1
 RC=$?
-if [[ RC -ne 0 ]]
+if [ "${RC}" -ne 0 ]
 then
 	echo "I require youtube-dl, installing it: pip install youtube-dl"
   apk add --no-cache ca-certificates ffmpeg openssl python3
