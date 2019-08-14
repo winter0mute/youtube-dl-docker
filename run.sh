@@ -1,6 +1,16 @@
 #!/bin/sh
 START_TIME=$(date +%s)
 
+# Check if youtube-dl is available
+type youtube-dl >/dev/null 2>&1
+RC=$?
+if [[ RC -ne 0 ]]
+then
+	echo "I require youtube-dl, installing it: pip install youtube-dl"
+  apk add --no-cache ca-certificates ffmpeg openssl python3
+  pip3 install youtube-dl
+fi
+
 # If the DOWNLOAD_TO_DATE_FOLDER variable is set to yes then a directory named as date&time is created and swtiched to this folder
 if [ ! -z "${DOWNLOAD_TO_DATE_FOLDER}" ]
 then
