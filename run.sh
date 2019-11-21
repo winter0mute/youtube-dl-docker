@@ -18,6 +18,8 @@ fi
 echo "Version of youtube-dl: $(youtube-dl --version)"
 
 # Run the youtube-dl with the received arguments
+echo "Will run the following command now:"
+echo "youtube-dl $@"
 youtube-dl "$@"
 RC=$?
 
