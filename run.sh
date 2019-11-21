@@ -1,14 +1,14 @@
 #!/bin/sh
 START_TIME=$(date +%s)
 
-# If the DOWNLOAD_TO_DATE_FOLDER variable is set to yes then a directory named as date&time is created and swtiched to this folder
+# If the DOWNLOAD_TO_DATE_FOLDER variable is set to yes then a directory named as date&time is created and switched to this folder
 if [ ! -z "${DOWNLOAD_TO_DATE_FOLDER}" ]
 then
       if [ "${DOWNLOAD_TO_DATE_FOLDER}" == "yes" ]
       then
         DATE_VARIABLE=$(date '+%Y-%b-%d_%H:%M:%S')
 	echo "Found 'DOWNLOAD_TO_DATE_FOLDER' variable set to 'yes'"
-	echo "Download will started in the folder '${DATE_VARIABLE}'"
+	echo "Download will be started in folder '${DATE_VARIABLE}'"
         mkdir -p "${DATE_VARIABLE}"
         cd "${DATE_VARIABLE}"
       fi
@@ -17,7 +17,7 @@ fi
 # Echo version
 echo "Version of youtube-dl: $(youtube-dl --version)"
 
-# Run the youtube-dl whit the recieved aruments
+# Run the youtube-dl with the received arguments
 youtube-dl "$@"
 RC=$?
 
