@@ -6,7 +6,7 @@ type youtube-dl >/dev/null 2>&1
 RC=$?
 if [ "${RC}" -ne 0 ]
 then
-	echo "I require youtube-dl, installing it: pip install youtube-dl"
+  echo "I require youtube-dl, installing it: pip install youtube-dl"
   apk add --no-cache ca-certificates ffmpeg openssl python3
   pip3 install youtube-dl
 fi
@@ -18,7 +18,7 @@ then
       then
         DATE_VARIABLE=$(date '+%Y-%b-%d_%H:%M:%S')
 	echo "Found 'DOWNLOAD_TO_DATE_FOLDER' variable set to 'yes'"
-	echo "Download will started in the folder '${DATE_VARIABLE}'"
+	echo "Download will be started in folder '${DATE_VARIABLE}'"
         mkdir -p "${DATE_VARIABLE}"
         cd "${DATE_VARIABLE}"
       fi
@@ -27,7 +27,9 @@ fi
 # Echo version
 echo "Version of youtube-dl: $(youtube-dl --version)"
 
-# Run the youtube-dl whit the recieved aruments
+# Run the youtube-dl with the received arguments
+echo "Will run the following command now:"
+echo "youtube-dl $@"
 youtube-dl "$@"
 RC=$?
 
