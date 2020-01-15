@@ -6,9 +6,12 @@ type youtube-dl >/dev/null 2>&1
 RC=$?
 if [ "${RC}" -ne 0 ]
 then
-  echo "I require youtube-dl, installing it: pip install youtube-dl"
+  echo "I require youtube-dl, installing it and prerequisites."
+  echo "Installing prerequisites: apk add --no-cache ca-certificates ffmpeg openssl python3"
   apk add --no-cache ca-certificates ffmpeg openssl python3
+  echo "Installing youtube-dl itself: pip install youtube-dl"
   pip3 install youtube-dl
+  echo "Install complete!"
 fi
 
 # If the DOWNLOAD_TO_DATE_FOLDER variable is set to yes then a directory named as date&time is created and swtiched to this folder
