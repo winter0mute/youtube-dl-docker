@@ -37,10 +37,12 @@ echo "youtube-dl $@"
 youtube-dl "$@"
 RC=$?
 
+echo ""
 if [ "${RC}" != 0 ]
 then
-  echo ""
   echo "Attention, youtube-dl with error code ${RC}!"
+else
+  echo "Download ended without error!"
 fi
 
 # Calculate run duration
