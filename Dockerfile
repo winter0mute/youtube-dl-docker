@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:latest
 MAINTAINER winter0mute <winter0mute@noreply.net>
 
 COPY run.sh /run.sh
