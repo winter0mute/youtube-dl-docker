@@ -27,7 +27,8 @@ then
       fi
 fi
 
-# Echo version
+# Echo versions
+echo "Version of Alpine Linux: $(cat /etc/alpine-release)"
 echo "Version of youtube-dl: $(youtube-dl --version)"
 
 # Run the youtube-dl with the received arguments
