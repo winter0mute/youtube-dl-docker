@@ -42,7 +42,7 @@ if [ "${RC}" != 0 ]
 then
   echo "Attention, youtube-dl with error code ${RC}!"
 else
-  echo "Download ended without error!"
+  echo "Download ended successfully!"
 fi
 
 # Calculate run duration
