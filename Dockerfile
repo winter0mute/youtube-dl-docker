@@ -7,7 +7,11 @@ RUN pip install --upgrade pip && \
 
 RUN touch /firstrun_placeholder
 
+RUN mkdir -p -m777 /cache/youtube-dl
+
 COPY run.sh /run.sh
+
+COPY youtube-dl.conf /etc/youtube-dl.conf
 
 WORKDIR /srv
 
