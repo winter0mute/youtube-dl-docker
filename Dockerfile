@@ -1,8 +1,9 @@
-FROM alpine:latest
+FROM python:alpine
 MAINTAINER winter0mute <winter0mute@noreply.net>
 
-RUN apk add --no-cache ca-certificates ffmpeg openssl python3 && \
-    pip3 install --upgrade pip wheel youtube-dl
+RUN pip install --upgrade pip && \
+    pip install youtube_dl && \
+    apk add ffmpeg
 
 RUN touch /firstrun_placeholder
 

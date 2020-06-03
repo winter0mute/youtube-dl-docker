@@ -4,8 +4,8 @@ START_TIME=$(date +%s)
 # Check if first run as root, if yes then tryig to upgrade youtube-dl
 if [ -f /firstrun_placeholder -a "$(id -u)" = "0" ]
 then
-  echo "Detecting first run as root, trying to upgrade youtube-dl: pip3 install --upgrade youtube-dl"
-  pip3 install --upgrade youtube-dl
+  echo "Detecting first run as root, trying to upgrade youtube-dl: pip install --upgrade youtube-dl"
+  pip install --upgrade youtube-dl
   echo "Upgrade complete!"
   echo -n "Removeing first run placeholder file..."
   rm /firstrun_placeholder
